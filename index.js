@@ -2,8 +2,9 @@ require('dotenv').config()
 
 const io = require('socket.io') (9800, {
     cors: {
-        origin: process.env.BASE_URL,
-        methods: ["GET", "POST"]
+        origin: "*",
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     },
 });
 
